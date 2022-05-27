@@ -13,3 +13,5 @@ root.render(
     </BrowserRouter>
   </React.StrictMode>,
 );
+
+export * from './pages/CardPayPage';
