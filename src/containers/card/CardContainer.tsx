@@ -1,10 +1,10 @@
 import React, { useEffect } from 'react';
 import axios from 'axios';
-import { createAction } from 'context/Provider';
-import { useAppDispatch, useAppState } from 'hooks';
-import { ActionType } from 'types';
-import Card from 'components/card/Card';
-import { removePathnameCardEdit } from 'utils';
+import { createAction } from '../../context/Provider';
+import { useAppDispatch, useAppState } from '../../hooks';
+import { ActionType } from '../../types';
+import Card from '../../components/card/Card';
+import { removePathnameCardEdit } from '../../utils';
 
 function CardContainer() {
   const {

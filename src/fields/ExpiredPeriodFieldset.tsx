@@ -1,7 +1,7 @@
 import React from 'react';
 
-import CardFormLabel from 'components/card/CardFormLabel';
-import ExpiredPeriodInputContainer from 'containers/card/ExpiredPeriodInputContainer';
+import CardFormLabel from '../components/card/CardFormLabel';
+import ExpiredPeriodInputContainer from '../containers/card/ExpiredPeriodInputContainer';
 
 import { FieldBody, FieldHead, FieldSet } from './style';
 

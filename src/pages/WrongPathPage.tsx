@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import PageTitle from 'components/navigater/PageTitle';
+import PageTitle from '../components/navigater/PageTitle';
 
 import { PageWrapper } from './style';
 

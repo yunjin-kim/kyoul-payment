@@ -1,7 +1,7 @@
 import React from 'react';
 
-import CardFormLabel from 'components/card/CardFormLabel';
-import CardPasswordInputContainer from 'containers/card/CardPasswordInputContainer';
+import CardFormLabel from '../components/card/CardFormLabel';
+import CardPasswordInputContainer from '../containers/card/CardPasswordInputContainer';
 
 import { FieldBody, FieldHead, FieldSet } from './style';
 

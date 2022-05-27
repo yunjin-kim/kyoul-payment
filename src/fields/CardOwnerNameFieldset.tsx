@@ -1,10 +1,10 @@
 import React from 'react';
 
-import CardFormLabel from 'components/card/CardFormLabel';
+import CardFormLabel from '../components/card/CardFormLabel';
 
-import CardOwnerNameInputContainer from 'containers/card/CardOwnerNameInputContainer';
+import CardOwnerNameInputContainer from '../containers/card/CardOwnerNameInputContainer';
 
-import { useAppState } from 'hooks';
+import { useAppState } from '../hooks';
 
 import { MAX_NAME_LENGTH } from '../constants';
 

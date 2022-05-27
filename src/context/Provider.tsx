@@ -1,5 +1,5 @@
 import React, { createContext, Dispatch, useReducer } from 'react';
-import { ActionType, CardType } from 'types';
+import { ActionType, CardType } from '../types';
 
 export type State = {
   firstInputCardNumber: string;

@@ -7,8 +7,8 @@ import {
   AppStateContext,
   State,
   createAction,
-} from 'context/Provider';
-import { ActionType } from 'types';
+} from '../context/Provider';
+import { ActionType } from '../types';
 
 export function useAppState(): State {
   const state = useContext(AppStateContext);

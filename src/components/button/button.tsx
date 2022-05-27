@@ -19,7 +19,7 @@ function Button({ id, onClick, buttonType }: Props) {
     <ButtonStyled
       id={id}
       onClick={onClick}
-      src={`/img/${buttonType}-icon.png`}
+      src={`../img/${buttonType}-icon.png`}
       alt={`${buttonType}-icon`}
     />
   );

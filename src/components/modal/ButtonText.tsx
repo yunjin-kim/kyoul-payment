@@ -14,7 +14,7 @@ const Text = ({ typeButtonClick, cardInfo }: Props) => (
   <p
     id={cardInfo.name}
     onClick={typeButtonClick}
-    css={{
+    style={{
       width: '60px',
       height: '40px',
       border: 'none',

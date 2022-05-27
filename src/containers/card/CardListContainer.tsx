@@ -1,17 +1,17 @@
 import React, { forwardRef, useEffect } from 'react';
 import styled from '@emotion/styled';
 
-import Card from 'components/card/Card';
+import Card from '../../components/card/Card';
 
 import DeleteButtonContainer from '../button/DeleteButtonContainer';
-import EditButtonContainer from 'containers/button/EditButtonContainer';
+import EditButtonContainer from '../../containers/button/EditButtonContainer';
 import AddCardContainer from './AddCardContainer';
 
-import { useCard } from 'hooks';
-import { CardType } from 'types';
+import { useCard } from '../../hooks';
+import { CardType } from '../../types';
 import { CardWrapper } from './style';
 import { css } from '@emotion/react';
-import { FlexWrapper } from 'pages/style';
+import { FlexWrapper } from '../../pages/style';
 
 type Props = {
   flexDirection: string;

@@ -1,13 +1,13 @@
 import React from 'react';
 import styled from '@emotion/styled';
 
-import ButtonText from 'components/modal/ButtonText';
-import TypeButton from 'components/button/TypeButton';
+import ButtonText from '../../components/modal/ButtonText';
+import TypeButton from '../../components/button/TypeButton';
 
 import { cardTypes } from '../../constants';
-import { createAction } from 'context/Provider';
-import { useAppDispatch } from 'hooks';
-import { ActionType } from 'types';
+import { createAction } from '../../context/Provider';
+import { useAppDispatch } from '../../hooks';
+import { ActionType } from '../../types';
 
 const ButtonContainerStyled = styled.div({
   width: '375px',

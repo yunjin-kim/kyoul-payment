@@ -2,15 +2,15 @@ import React from 'react';
 import { Route, Routes } from 'react-router-dom';
 import { Global } from '@emotion/react';
 
-import AppProvider from 'context/Provider';
+import AppProvider from './context/Provider';
 
-import AddCardPage from 'pages/AddCardPage';
-import CardListPage from 'pages/CardListPage';
-import CardEditPage from 'pages/CardEditPage';
-import CardPayPage from 'pages/CardPayPage';
-import WrongPathPage from 'pages/WrongPathPage';
+import AddCardPage from './pages/AddCardPage';
+import CardListPage from './pages/CardListPage';
+import CardEditPage from './pages/CardEditPage';
+import CardPayPage from './pages/CardPayPage';
+import WrongPathPage from './pages/WrongPathPage';
 
-import { initial } from 'styles/global';
+import { initial } from './styles/global';
 
 function App() {
   return (

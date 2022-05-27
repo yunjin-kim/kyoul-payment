@@ -1,13 +1,15 @@
 import React from 'react';
-import styled from '@emotion/styled';
-import Card from 'components/card/Card';
-import { useAppDispatch, useAppState } from 'hooks';
-import ConfirmButtonContainer from 'containers/button/ConfirmButtonContainer';
-import CardFormInput from 'components/card/CardFormInput';
 import { css } from '@emotion/react';
-import { removeWhiteSpaces } from 'utils';
-import { createAction } from 'context/Provider';
-import { ActionType } from 'types';
+import styled from '@emotion/styled';
+
+import Card from '../../components/card/Card';
+import ConfirmButtonContainer from '../../containers/button/ConfirmButtonContainer';
+import CardFormInput from '../../components/card/CardFormInput';
+
+import { useAppDispatch, useAppState } from '../../hooks';
+import { removeWhiteSpaces } from '../../utils';
+import { createAction } from '../../context/Provider';
+import { ActionType } from '../../types';
 
 const Wrapper = styled.div(() => ({
   display: 'flex',
@@ -69,7 +71,8 @@ function CardCompleteContainer() {
         value={cardAlias}
         onChange={handleCardAlias}
         placeholder="카드별칭을 입력해주세요."
-        css={style}
+        width='208px'
+        height='45px'
       />
       <ConfirmButtonContainer />
     </Wrapper>

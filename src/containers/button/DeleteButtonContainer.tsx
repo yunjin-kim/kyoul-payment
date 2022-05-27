@@ -3,9 +3,9 @@ import styled from '@emotion/styled';
 import { css } from '@emotion/react';
 import axios from 'axios';
 
-import { useAppDispatch, useAppState } from 'hooks';
-import { createAction } from 'context/Provider';
-import { ActionType } from 'types';
+import { useAppDispatch, useAppState } from '../../hooks';
+import { createAction } from '../../context/Provider';
+import { ActionType } from '../../types';
 
 const DeleteButtonStyled = styled.button(
   css`

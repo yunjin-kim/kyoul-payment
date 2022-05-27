@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from '@emotion/styled';
 
-import Button from 'components/button/Button';
+import Button from '../../components/button/Button';
 
 const Wrapper = styled.div(() => ({
   width: '208px',

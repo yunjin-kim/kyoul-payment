@@ -1,8 +1,8 @@
 import React, { useRef } from 'react';
 import { Link } from 'react-router-dom';
 
-import CardListContainer from 'containers/card/CardListContainer';
-import SliderButtonContainer from 'containers/button/SliderButtonContainer';
+import CardListContainer from '../containers/card/CardListContainer';
+import SliderButtonContainer from '../containers/button/SliderButtonContainer';
 
 import {
   CardListContainerStyled,

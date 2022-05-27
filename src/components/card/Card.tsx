@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import { transformNumToBullet, transformToColor } from 'utils';
+
+import { transformNumToBullet, transformToColor } from '../../utils';
 
 const OwnerNameSpan = styled.span<{ name: string }>(({ name }) => ({
   fontSize: `${Math.min(14, Math.max(4, 20 - Math.floor(name.length / 2)))}px`,

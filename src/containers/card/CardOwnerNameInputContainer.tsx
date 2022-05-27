@@ -1,11 +1,11 @@
 import React from 'react';
 
-import CardFormInput from 'components/card/CardFormInput';
+import CardFormInput from '../../components/card/CardFormInput';
 
-import { useAppDispatch, useAppState } from 'hooks';
-import { removeWhiteSpaces } from 'utils';
-import { createAction } from 'context/Provider';
-import { ActionType } from 'types';
+import { useAppDispatch, useAppState } from '../../hooks';
+import { removeWhiteSpaces } from '../../utils';
+import { createAction } from '../../context/Provider';
+import { ActionType } from '../../types';
 
 function CardOwnerNameInputContainer() {
   const { name } = useAppState();

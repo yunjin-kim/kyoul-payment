@@ -1,7 +1,7 @@
 import React from 'react';
 
-import CardFormLabel from 'components/card/CardFormLabel';
-import CVCInputContainer from 'containers/card/CVCInputContainer';
+import CardFormLabel from '../components/card/CardFormLabel';
+import CVCInputContainer from '../containers/card/CVCInputContainer';
 
 import { FieldBody, FieldHead, FieldSet } from './style';
 
