@@ -8,7 +8,7 @@
     "payment"
   ],
   "private": false,
-  "main": "dist/index.js",
+  "main": "dist/lib/index.js",
   "browser": "./browser/specific/main.js",
   "dependencies": {
     "@emotion/babel-preset-css-prop": "^11.2.0",
