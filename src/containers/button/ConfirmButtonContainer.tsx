@@ -3,12 +3,12 @@ import axios from 'axios';
 
 import ConfirmButton from '../../components/card/ConfirmButton';
 
-import { createPageAction } from 'context/PageProvider';
-import { createAction } from 'context/Provider';
+import { createPageAction } from '../../context/PageProvider';
+import { createAction } from '../../context/Provider';
 
 import { useAppDispatch, useAppState, usePageDispatch } from '../../hooks';
 import { removePathnameCardEdit } from '../../utils';
-import { ActionType, CardType, PageActionType } from 'types';
+import { ActionType, CardType, PageActionType } from '../../types';
 
 function ConfirmButtonContainer() {
   const pageDispatch = usePageDispatch();

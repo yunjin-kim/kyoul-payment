@@ -2,10 +2,10 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from '@emotion/styled';
 
-import { createPageAction } from 'context/PageProvider';
+import { createPageAction } from '../../context/PageProvider';
 
-import { usePageDispatch } from 'hooks';
-import { PageActionType } from 'types';
+import { usePageDispatch } from '../../hooks';
+import { PageActionType } from '../../types';
 
 const Wrapper = styled.div(() => ({
   width: '208px',
