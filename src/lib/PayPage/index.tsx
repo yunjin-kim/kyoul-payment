@@ -14,7 +14,7 @@ import {
   TermStyled,
   TitleWrapper,
   TotalPayStyled,
-} from './style';
+} from '../style';
 
 function CardPayPage({ totalAccount }: any) {
   const CardListSliderRef = useRef<HTMLDivElement>(null);
