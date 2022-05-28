@@ -4,7 +4,7 @@ import CardContainer from '../containers/card/CardContainer';
 import CardFormContainer from '../containers/card/CardFormContainer';
 import CardCompleteContainer from '../containers/card/CardCompleteContainer';
 import TypeButtonModal from '../containers/modal/TypeButtonModalContainer';
-import BackButton from '../components/button/BackButton';
+import BackButtonContainer from '../containers/button/BackButtonContainer';
 import PageTitle from '../components/navigater/PageTitle';
 
 import { useAppState } from '../hooks';
@@ -26,7 +26,7 @@ function AddCardPage() {
     <PageWrapper>
       {changeCardType && <TypeButtonModal />}
       <TitleWrapper>
-        <BackButton />
+        <BackButtonContainer />
         <MarginWrapper marginRight="20px" />
         <PageTitle>카드추가</PageTitle>
       </TitleWrapper>

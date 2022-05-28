@@ -8,15 +8,30 @@ import {
   State,
   createAction,
 } from '../context/Provider';
+import { PageState, PageStateContext, PageDispatch, PageDispatchContext } from './../context/PageProvider';
+
 import { ActionType } from '../types';
 
 export function useAppState(): State {
   const state = useContext(AppStateContext);
+
+  return state;
+}
+
+export function usePageState(): PageState {
+  const state = useContext(PageStateContext);
+
   return state;
 }
 
 export function useAppDispatch(): AppDispatch {
   const dispatch = useContext(AppDispatchContext);
+  return dispatch;
+}
+
+export function usePageDispatch(): PageDispatch {
+  const dispatch = useContext(PageDispatchContext);
+
   return dispatch;
 }
 

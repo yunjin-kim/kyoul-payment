@@ -5,7 +5,7 @@ import Card from '../../components/card/Card';
 
 import DeleteButtonContainer from '../button/DeleteButtonContainer';
 import EditButtonContainer from '../../containers/button/EditButtonContainer';
-import AddCardButton from '../../components/button/AddCardButton';
+import AddCardButtonContainer from '../../containers/button/AddCardButtonContainer'; 
 
 import { useCard } from '../../hooks';
 import { CardType } from '../../types';
@@ -24,7 +24,7 @@ const CardAlias = styled.p(() => ({
   textAlign: 'center',
 }));
 
-const CardButtonWrap = styled.div(() => ({
+const CardButtonWrapper = styled.div(() => ({
   width: '70px',
   display: 'flex',
   justifyContent: 'space-between',
@@ -39,11 +39,18 @@ const Wrapper = styled.div(
   (props: any) => ({ flexDirection: props.flexDirection }),
 );
 
+const AddCardTextWrapper = styled.p(() => ({
+  fontSize: '1rem',
+  margin: 'auto',
+  marginTop: '10px',
+}))
+
 const CardListContainer = forwardRef<HTMLDivElement, Props>(
   ({ flexDirection, marginRight, marginBottom }, ref) => {
     const { cardList, getCards } = useCard();
+
     useEffect(() => {
-      getCards();
+      // getCards();
     }, []);
 
     return (
@@ -63,16 +70,16 @@ const CardListContainer = forwardRef<HTMLDivElement, Props>(
               />
               <FlexWrapper justifyContent="space-between">
                 <CardAlias>{card.alias}</CardAlias>
-                <CardButtonWrap>
+                <CardButtonWrapper>
                   <EditButtonContainer id={card.id} />
                   <DeleteButtonContainer id={card.id} />
-                </CardButtonWrap>
+                </CardButtonWrapper>
               </FlexWrapper>
             </CardWrapper>
           ))}
         <FlexWrapper flexDirection="column">
-          <AddCardButton />
-          <p>카드 추가</p>
+          <AddCardButtonContainer />
+          <AddCardTextWrapper>카드 추가</AddCardTextWrapper>
         </FlexWrapper>
       </Wrapper>
     );
