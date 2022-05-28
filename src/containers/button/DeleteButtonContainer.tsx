@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from '@emotion/styled';
 import { css } from '@emotion/react';
-import axios from 'axios';
 
 import { useAppDispatch, useAppState } from '../../hooks';
 import { createAction } from '../../context/Provider';
@@ -23,7 +22,7 @@ function DeleteButtonContainer({ id }: { id: string }) {
     const cardId = event.target.id;
     if (window.confirm('등록된 카드를 삭제하시겠습니까?')) {
       const setCardList = cardList.filter((card) => Number(card.id) !== Number(cardId));
-      
+
       dispatch(createAction(ActionType.SET_CARD_LIST, setCardList));
     }
   };

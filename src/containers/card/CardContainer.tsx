@@ -1,9 +1,12 @@
 import React from 'react';
 import axios from 'axios';
+
+import Card from '../../components/card/Card';
+
 import { createAction } from '../../context/Provider';
+
 import { useAppDispatch, useAppState } from '../../hooks';
 import { ActionType } from '../../types';
-import Card from '../../components/card/Card';
 
 function CardContainer() {
   const {

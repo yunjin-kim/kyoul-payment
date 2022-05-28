@@ -2,10 +2,10 @@ import React from 'react';
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 
-import { createAction } from 'context/Provider';
+import { createAction } from '../../context/Provider';
 
-import { useAppDispatch, useAppState } from 'hooks';
-import { ActionType } from 'types';
+import { useAppDispatch, useAppState } from '../../hooks';
+import { ActionType } from '../../types';
 
 const EditButtonStyled = styled.button(
   css`
