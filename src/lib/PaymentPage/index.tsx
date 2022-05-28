@@ -5,7 +5,9 @@ import AddCardPage from '../AddCardPage';
 import PayPage from '../PayPage';
 import CardEditPage from '../CardEditPage';
 
-function PaymentPage() {
+type TotalAccountType = { totalAccount: number };
+
+function PaymentPage({ totalAccount }: TotalAccountType) {
   const { cardAddPage, cardEditPage } = usePageState();
 
   if (cardAddPage) {
@@ -16,7 +18,7 @@ function PaymentPage() {
     return <CardEditPage />
   }
 
-  return (<PayPage />);
+  return (<PayPage totalAccount={totalAccount} />);
 }
 
 export default PaymentPage;
