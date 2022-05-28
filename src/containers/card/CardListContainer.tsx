@@ -5,7 +5,7 @@ import Card from '../../components/card/Card';
 
 import DeleteButtonContainer from '../button/DeleteButtonContainer';
 import EditButtonContainer from '../../containers/button/EditButtonContainer';
-import AddCardContainer from './AddCardContainer';
+import AddCardButton from '../../components/button/AddCardButton';
 
 import { useCard } from '../../hooks';
 import { CardType } from '../../types';
@@ -71,7 +71,7 @@ const CardListContainer = forwardRef<HTMLDivElement, Props>(
             </CardWrapper>
           ))}
         <FlexWrapper flexDirection="column">
-          <AddCardContainer />
+          <AddCardButton />
           <p>카드 추가</p>
         </FlexWrapper>
       </Wrapper>
