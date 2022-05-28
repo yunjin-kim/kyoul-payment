@@ -50,7 +50,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "server": "json-server data.json --watch --port 4004",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepare": "rm -rf dist && mkdir dist && tsc"
   },
   "repository": {
     "type": "git",
