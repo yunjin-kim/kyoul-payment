@@ -20,7 +20,7 @@ export type State = {
   cardList: Array<CardType>;
 };
 
-type Action = { type: ActionType; payload: any};
+type Action = { type: ActionType; payload: any };
 
 export type AppDispatch = Dispatch<Action>;
 
@@ -61,7 +61,7 @@ function reducer(state: State, action: Action): any {
     case ActionType.ID:
       return {
         ...state,
-        id: action.payload
+        id: action.payload,
       };
     case ActionType.FIRST_INPUT_CARD_NUMBER:
       return {
@@ -133,11 +133,16 @@ function reducer(state: State, action: Action): any {
         ...state,
         cardAlias: action.payload,
       };
-    case ActionType.SET_CARD_LIST:
+    case ActionType.ADD_CARD_LIST:
       return {
         ...state,
         cardList: [...state.cardList, ...action.payload],
       };
+    case ActionType.DELETE_CARD:
+      return {
+        ...state,
+        cardList: [...action.payload],
+      }
   }
 }
 

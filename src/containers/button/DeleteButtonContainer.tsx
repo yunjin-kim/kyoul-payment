@@ -23,7 +23,7 @@ function DeleteButtonContainer({ id }: { id: string }) {
     if (window.confirm('등록된 카드를 삭제하시겠습니까?')) {
       const setCardList = cardList.filter((card) => Number(card.id) !== Number(cardId));
 
-      dispatch(createAction(ActionType.SET_CARD_LIST, setCardList));
+      dispatch(createAction(ActionType.DELETE_CARD, setCardList));
     }
   };
 

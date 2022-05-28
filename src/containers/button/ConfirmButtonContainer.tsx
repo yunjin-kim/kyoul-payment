@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import { v4 as uuidv4 } from 'uuid';
 
 import ConfirmButton from '../../components/card/ConfirmButton';
 
@@ -15,7 +16,6 @@ function ConfirmButtonContainer() {
   const appDispatch = useAppDispatch();
 
   const {
-    id,
     firstInputCardNumber,
     secondInputCardNumber,
     thirdInputCardNumber,
@@ -32,9 +32,9 @@ function ConfirmButtonContainer() {
 
   const handleConfirmCard = () => {
     appDispatch(
-      createAction(ActionType.SET_CARD_LIST, [
+      createAction(ActionType.ADD_CARD_LIST, [
         {
-          id: id,
+          id: uuidv4(),
           firstCardNumber: firstInputCardNumber,
           secondCardNumber: secondInputCardNumber,
           thirdCardNumber: thirdInputCardNumber,
@@ -50,6 +50,20 @@ function ConfirmButtonContainer() {
         },
       ]),
     );
+    appDispatch(createAction(ActionType.FIRST_INPUT_CARD_NUMBER, ''));
+    appDispatch(createAction(ActionType.SECOND_INPUT_CARD_NUMBER, ''));
+    appDispatch(createAction(ActionType.THIRD_INPUT_CARD_NUMBER, ''));
+    appDispatch(createAction(ActionType.FOURTH_INPUT_CARD_NUMBER, ''));
+    appDispatch(createAction(ActionType.INPUT_NAME, ''));
+    appDispatch(createAction(ActionType.INPUT_EXPIRED_PERIOD_MONTH, ''));
+    appDispatch(createAction(ActionType.INPUT_EXPIRED_PERIOD_YEAR, ''));
+    appDispatch(createAction(ActionType.INPUT_CVC, ''));
+    appDispatch(createAction(ActionType.FIRST_INPUT_PASSWORD, ''));
+    appDispatch(createAction(ActionType.SECOND_INPUT_PASSWORD, ''));
+    appDispatch(createAction(ActionType.COMPLETE_CARD, false));
+    appDispatch(createAction(ActionType.CARD_TYPE, ''));
+    appDispatch(createAction(ActionType.INPUT_CARD_ALIAS, ''));
+
     pageDispatch(createPageAction(PageActionType.PAY_PAGE, true));
   };
 

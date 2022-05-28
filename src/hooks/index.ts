@@ -42,7 +42,7 @@ export function useCard() {
   const getCards = async () => {
     try {
       const response = await axios.get('http://localhost:4004/cards');
-      dispatch(createAction(ActionType.SET_CARD_LIST, response.data));
+      // dispatch(createAction(ActionType.SET_CARD_LIST, response.data));
     } catch (error) {
       console.log(error);
     }
