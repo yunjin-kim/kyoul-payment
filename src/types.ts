@@ -1,4 +1,5 @@
 export enum ActionType {
+  ID = 'ID',
   FIRST_INPUT_CARD_NUMBER = 'FIRST_INPUT__CARD_NUMBER',
   SECOND_INPUT_CARD_NUMBER = 'SECOND_INPUT_CARD_NUMBER',
   THIRD_INPUT_CARD_NUMBER = 'THIRD_INPUT_CARD_NUMBER',
@@ -31,4 +32,16 @@ export type CardType = {
   secondPassword: string;
   type: string;
   alias: string;
+};
+
+export enum PageActionType {
+  PAY_PAGE = 'PAY_PAGE',
+  CARD_ADD_PAGE = 'CARD_ADD_PAGE',
+  CARD_EDIT_PAGE = 'CARD_EDIT_PAGE',
+};
+
+export type PageType = {
+  payPage: boolean;
+  cardAddPage: boolean;
+  cardEditPage: boolean;
 };

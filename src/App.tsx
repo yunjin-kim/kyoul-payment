@@ -3,6 +3,7 @@ import { Route, Routes } from 'react-router-dom';
 import { Global } from '@emotion/react';
 
 import AppProvider from './context/Provider';
+import PageProvider from './context/PageProvider';
 
 import AddCardPage from './pages/AddCardPage';
 import CardListPage from './pages/CardListPage';
@@ -15,14 +16,16 @@ import { initial } from './styles/global';
 function App() {
   return (
     <AppProvider>
-      <Global styles={initial} />
-      <Routes>
-        <Route path="/card" element={<CardListPage />} />
-        <Route path="/card/add" element={<AddCardPage />} />
-        <Route path="/card/edit/*" element={<CardEditPage />} />
-        <Route path="/card/pay/*" element={<CardPayPage />} />
-        <Route path="*" element={<WrongPathPage />} />
-      </Routes>
+      <PageProvider>
+        <Global styles={initial} />
+        <Routes>
+          <Route path="/card" element={<CardListPage />} />
+          <Route path="/card/add" element={<AddCardPage />} />
+          <Route path="/card/edit/*" element={<CardEditPage />} />
+          <Route path="/card/pay/*" element={<CardPayPage />} />
+          <Route path="*" element={<WrongPathPage />} />
+        </Routes>
+      </PageProvider>
     </AppProvider>
   );
 }
