@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { usePageState } from 'hooks';
+import { usePageState } from '../../hooks';
 import AddCardPage from '../AddCardPage';
 import PayPage from '../PayPage';
 import CardEditPage from '../CardEditPage';
