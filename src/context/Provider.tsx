@@ -2,6 +2,7 @@ import React, { createContext, Dispatch, useReducer } from 'react';
 import { ActionType, CardType } from '../types';
 
 export type State = {
+  id: string;
   firstInputCardNumber: string;
   secondInputCardNumber: string;
   thirdInputCardNumber: string;
@@ -19,11 +20,12 @@ export type State = {
   cardList: Array<CardType>;
 };
 
-type Action = { type: ActionType; payload: string | boolean | Array<CardType> };
+type Action = { type: ActionType; payload: any};
 
 export type AppDispatch = Dispatch<Action>;
 
 const initalState: State = {
+  id: '',
   firstInputCardNumber: '',
   secondInputCardNumber: '',
   thirdInputCardNumber: '',
@@ -46,7 +48,7 @@ export const AppDispatchContext = createContext<AppDispatch>(() => null);
 
 export function createAction(
   type: ActionType,
-  payload: string | boolean | Array<CardType>,
+  payload: string | boolean | Array<CardType> | [],
 ): Action {
   return {
     type,
@@ -56,6 +58,11 @@ export function createAction(
 
 function reducer(state: State, action: Action): any {
   switch (action.type) {
+    case ActionType.ID:
+      return {
+        ...state,
+        id: action.payload
+      };
     case ActionType.FIRST_INPUT_CARD_NUMBER:
       return {
         ...state,
@@ -129,7 +136,7 @@ function reducer(state: State, action: Action): any {
     case ActionType.SET_CARD_LIST:
       return {
         ...state,
-        cardList: action.payload,
+        cardList: [...state.cardList, ...action.payload],
       };
   }
 }
@@ -138,11 +145,9 @@ function AppProvider({ children }: { children: React.ReactNode }) {
   const [state, dispatch] = useReducer(reducer, initalState);
 
   return (
-    <>
-      <AppStateContext.Provider value={state}>
-        <AppDispatchContext.Provider value={dispatch}>{children}</AppDispatchContext.Provider>
-      </AppStateContext.Provider>
-    </>
+    <AppStateContext.Provider value={state}>
+      <AppDispatchContext.Provider value={dispatch}>{children}</AppDispatchContext.Provider>
+    </AppStateContext.Provider>
   );
 }
 
