@@ -9,7 +9,7 @@ import { createAction } from '../../context/Provider';
 
 import { useAppDispatch, useAppState, usePageDispatch } from '../../hooks';
 import { removePathnameCardEdit } from '../../utils';
-import { ActionType, CardType, PageActionType } from '../../types';
+import { ActionType, PageActionType } from '../../types';
 
 function ConfirmButtonContainer() {
   const pageDispatch = usePageDispatch();

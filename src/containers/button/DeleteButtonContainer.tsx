@@ -2,9 +2,10 @@ import React from 'react';
 import styled from '@emotion/styled';
 import { css } from '@emotion/react';
 
-import { useAppDispatch, useAppState } from '../../hooks';
+import { useAppDispatch, useAppState, usePageDispatch } from '../../hooks';
 import { createAction } from '../../context/Provider';
-import { ActionType } from '../../types';
+import { ActionType, PageActionType } from '../../types';
+import { createPageAction } from '../../context/PageProvider';
 
 const DeleteButtonStyled = styled.button(
   css`
@@ -16,14 +17,16 @@ const DeleteButtonStyled = styled.button(
 
 function DeleteButtonContainer({ id }: { id: string }) {
   const { cardList } = useAppState();
-  const dispatch = useAppDispatch();
+  const appDispatch = useAppDispatch();
+  const pageDispatch = usePageDispatch();
 
   const handleDeleteButtonClick = async (event: any) => {
     const cardId = event.target.id;
     if (window.confirm('등록된 카드를 삭제하시겠습니까?')) {
       const setCardList = cardList.filter((card) => Number(card.id) !== Number(cardId));
 
-      dispatch(createAction(ActionType.DELETE_CARD, setCardList));
+      appDispatch(createAction(ActionType.DELETE_CARD, setCardList));
+      pageDispatch(createPageAction(PageActionType.PAY_PAGE, true));
     }
   };
 
