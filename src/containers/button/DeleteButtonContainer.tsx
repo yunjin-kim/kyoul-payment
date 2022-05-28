@@ -22,11 +22,8 @@ function DeleteButtonContainer({ id }: { id: string }) {
   const handleDeleteButtonClick = async (event: any) => {
     const cardId = event.target.id;
     if (window.confirm('등록된 카드를 삭제하시겠습니까?')) {
-      await axios(`http://localhost:4004/cards/${cardId}`, {
-        method: 'delete',
-      });
-
       const setCardList = cardList.filter((card) => Number(card.id) !== Number(cardId));
+      
       dispatch(createAction(ActionType.SET_CARD_LIST, setCardList));
     }
   };

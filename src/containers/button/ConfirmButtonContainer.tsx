@@ -30,7 +30,7 @@ function ConfirmButtonContainer() {
     cardAlias,
   } = useAppState();
 
-  const handleConfirmCard = async () => {
+  const handleConfirmCard = () => {
     appDispatch(
       createAction(ActionType.SET_CARD_LIST, [
         {
@@ -51,40 +51,6 @@ function ConfirmButtonContainer() {
       ]),
     );
     pageDispatch(createPageAction(PageActionType.PAY_PAGE, true));
-    // const cardId = removePathnameCardEdit(window.location.pathname);
-    // let pathName = '';
-    // let methodType = '';
-
-    //     if (window.location.pathname.includes('/card/add')) {
-    //       pathName = 'http://localhost:4004/cards';
-    //       methodType = 'post';
-    //     } else if (window.location.pathname.includes('/card/edit/')) {
-    //       pathName = `http://localhost:4004/cards/${cardId}`;
-    //       methodType = 'patch';
-    //     }
-    //
-    //     await axios(pathName, {
-    //       method: methodType,
-    //       headers: {
-    //         'Content-Type': 'application/json',
-    //       },
-    //       data: JSON.stringify({
-    //         firstCardNumber: firstInputCardNumber,
-    //         secondCardNumber: secondInputCardNumber,
-    //         thirdCardNumber: thirdInputCardNumber,
-    //         fourthCardNumber: fourthInputCardNumber,
-    //         ownerName: name,
-    //         month: expiredPeriodMonth,
-    //         year: expiredPeriodYear,
-    //         cvcNum: cvc,
-    //         firstPasswordNum: firstPassword,
-    //         secondPasswordNum: secondPassword,
-    //         type: cardType,
-    //         alias: cardAlias,
-    //       }),
-    //     });
-
-    // window.location.pathname = '/card';
   };
 
   let _disabled = true;
