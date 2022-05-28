@@ -4,8 +4,8 @@ import styled from '@emotion/styled';
 
 import { createPageAction } from '../../context/PageProvider';
 
-import { usePageDispatch } from 'hooks';
-import { PageActionType } from 'types';
+import { usePageDispatch } from '../../hooks';
+import { PageActionType } from '../../types';
 
 const SvgWrapper = styled.div(() => ({
   width: '30px',
