@@ -20,11 +20,14 @@ function App() {
       <PageProvider>
         <Global styles={initial} />
         <Routes>
-          <Route path='/' element={<PaymentPage totalAccount={1000} />} />
+          <Route
+            path="/"
+            element={<PaymentPage totalAccount={1000} paySuccessUrl="/" payCancelUrl="/" />}
+          />
           <Route path="/card" element={<CardListPage />} />
           <Route path="/card/add" element={<AddCardPage />} />
           <Route path="/card/edit/*" element={<CardEditPage />} />
-          <Route path="/card/pay/*" element={<CardPayPage />} />
+          {/* <Route path="/card/pay/*" element={<CardPayPage />} /> */}
           <Route path="*" element={<WrongPathPage />} />
         </Routes>
       </PageProvider>

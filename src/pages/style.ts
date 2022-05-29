@@ -84,13 +84,3 @@ export const TermStyled = styled.p(
     font-size: 0.8rem;
   `,
 );
-
-export const PayButtonStyled = styled.button(
-  css`
-    width: 148px;
-    height: 40px;
-    border: none;
-    cursor: pointer;
-    font-size: 1.2rem;
-  `,
-);

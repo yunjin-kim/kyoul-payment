@@ -1,8 +1,8 @@
 import React, { useRef } from 'react';
-import { Link } from 'react-router-dom';
 
 import CardListContainer from '../containers/card/CardListContainer';
 import SliderButtonContainer from '../containers/button/SliderButtonContainer';
+import PayButtonContainer from '../containers/button/PayButtonContainer';
 
 import {
   CardListContainerStyled,
@@ -10,13 +10,12 @@ import {
   FlexWrapper,
   MarginWrapper,
   PageWrapper,
-  PayButtonStyled,
   TermStyled,
   TitleWrapper,
   TotalPayStyled,
 } from './style';
 
-function CardPayPage({ totalAccount }: any) {
+function CardPayPage({ totalAccount, paySuccessUrl, payCancelUrl }: { totalAccount: number, paySuccessUrl: string, payCancelUrl: string }) {
   const CardListSliderRef = useRef<HTMLDivElement>(null);
   const CardLocationRef = useRef<number>(0);
 
@@ -52,7 +51,7 @@ function CardPayPage({ totalAccount }: any) {
       <MarginWrapper marginBottom="30px" />
       <FlexWrapper alignItems="center">
         <TermStyled>거래정보 제공 동의 woowa store&nbsp;</TermStyled>
-        <Link to="/card">상세보기</Link>
+        <a href="/">상세보기</a>
       </FlexWrapper>
       <MarginWrapper marginBottom="20px" />
       <FlexWrapper justifyContent="space-between" alignItems="center">
@@ -61,12 +60,8 @@ function CardPayPage({ totalAccount }: any) {
       </FlexWrapper>
       <MarginWrapper marginBottom="30px" />
       <FlexWrapper justifyContent="space-between">
-        <Link to="/">
-          <PayButtonStyled>결제하기</PayButtonStyled>
-        </Link>
-        <Link to="/">
-          <PayButtonStyled>취소하기</PayButtonStyled>
-        </Link>
+        <PayButtonContainer pathName={paySuccessUrl}>결제하기</PayButtonContainer>
+        <PayButtonContainer pathName={payCancelUrl}>취소하기</PayButtonContainer>
       </FlexWrapper>
     </PageWrapper>
   );

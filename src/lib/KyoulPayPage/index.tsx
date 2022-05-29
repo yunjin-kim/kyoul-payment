@@ -1,7 +1,7 @@
 import React from 'react';
 
 import AddCardPage from '../../pages/AddCardPage';
-import PayPage from '../../pages/PayPage';
+import CardPayPage from '../../pages/CardPayPage';
 import CardEditPage from '../../pages/CardEditPage';
 
 import { usePageState } from '../../hooks';
@@ -19,7 +19,7 @@ function PaymentPage({ totalAccount, paySuccessUrl, payCancelUrl }: TotalAccount
     return <CardEditPage />
   }
 
-  return (<PayPage totalAccount={totalAccount} paySuccessUrl={paySuccessUrl} payCancelUrl={payCancelUrl} />);
+  return (<CardPayPage totalAccount={totalAccount} paySuccessUrl={paySuccessUrl} payCancelUrl={payCancelUrl} />);
 }
 
 export default PaymentPage;
