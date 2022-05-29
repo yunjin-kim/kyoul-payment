@@ -1,13 +1,13 @@
 import { useContext } from 'react';
 import axios from 'axios';
 
-import AppProvider, {
+import {
   AppDispatch,
   AppDispatchContext,
   AppStateContext,
   State,
 } from '../context/Provider';
-import PageProvider, {
+import {
   PageState,
   PageStateContext,
   PageDispatch,
@@ -52,13 +52,3 @@ export function useCard() {
 
   return { cardList, getCards };
 }
-
-// export function KyoulPayProvider({ children }: { children: React.ReactNode }) {
-//   return (
-//     <PageProvider>
-//       <AppProvider>
-//         
-//       </AppProvider>
-//     </PageProvider>
-//   );
-// }

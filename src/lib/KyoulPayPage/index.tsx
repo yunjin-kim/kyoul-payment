@@ -6,9 +6,9 @@ import CardEditPage from '../../pages/CardEditPage';
 
 import { usePageState } from '../../hooks';
 
-type TotalAccountType = { totalAccount: number };
+type TotalAccountType = { totalAccount: number, paySuccessUrl: string, payCancelUrl: string };
 
-function PaymentPage({ totalAccount }: TotalAccountType) {
+function PaymentPage({ totalAccount, paySuccessUrl, payCancelUrl }: TotalAccountType) {
   const { cardAddPage, cardEditPage } = usePageState();
 
   if (cardAddPage) {
@@ -19,7 +19,7 @@ function PaymentPage({ totalAccount }: TotalAccountType) {
     return <CardEditPage />
   }
 
-  return (<PayPage totalAccount={totalAccount} />);
+  return (<PayPage totalAccount={totalAccount} paySuccessUrl={paySuccessUrl} payCancelUrl={payCancelUrl} />);
 }
 
 export default PaymentPage;

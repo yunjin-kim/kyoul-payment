@@ -16,7 +16,7 @@ import {
   TotalPayStyled,
 } from './style';
 
-function CardPayPage({ totalAccount }: any) {
+function CardPayPage({ totalAccount, paySuccessUrl, payCancelUrl }: { totalAccount: number, paySuccessUrl: string, payCancelUrl: string }) {
   const CardListSliderRef = useRef<HTMLDivElement>(null);
   const CardLocationRef = useRef<number>(0);
 
@@ -61,10 +61,10 @@ function CardPayPage({ totalAccount }: any) {
       </FlexWrapper>
       <MarginWrapper marginBottom="30px" />
       <FlexWrapper justifyContent="space-between">
-        <Link to="/">
+        <Link to={paySuccessUrl}>
           <PayButtonStyled>결제하기</PayButtonStyled>
         </Link>
-        <Link to="/">
+        <Link to={payCancelUrl}>
           <PayButtonStyled>취소하기</PayButtonStyled>
         </Link>
       </FlexWrapper>
