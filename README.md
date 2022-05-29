@@ -8,6 +8,8 @@ Using npm;
 $ npm install kyoul-pay
 ```
 
+<br/>
+
 ### Example
 
 ```
@@ -24,7 +26,9 @@ function App() {
 }
 ```
 
-Wheb you want to show payment
+<br/>
+
+When you want to show payment
 ```
 // someComponent.jsx
 
