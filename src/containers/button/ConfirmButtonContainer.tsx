@@ -33,32 +33,11 @@ function ConfirmButtonContainer({ id }: { id: any }) {
   const handleConfirmCard = (event: { target: any }) => {
     if (event.target instanceof Element) return;
 
-
-    cardList.find((card: CardType) => card.id !== (event.target as Element).id)
-      ? appDispatch(
-          createAction(ActionType.EDIT_CARD_LIST, [
-            ...cardList.filter((card: CardType) => card.id !== (event.target as Element).id),
-            [
-              {
-                id: uuidv4(),
-                firstCardNumber: firstInputCardNumber,
-                secondCardNumber: secondInputCardNumber,
-                thirdCardNumber: thirdInputCardNumber,
-                fourthCardNumber: fourthInputCardNumber,
-                ownerName: name,
-                month: expiredPeriodMonth,
-                year: expiredPeriodYear,
-                cvc: cvc,
-                firstPassword: firstPassword,
-                secondPassword: secondPassword,
-                type: cardType,
-                alias: cardAlias,
-              },
-            ],
-          ]),
-        )
-      : appDispatch(
-          createAction(ActionType.ADD_CARD_LIST, [
+    if (cardList.find((card: CardType) => card.id !== (event.target as Element).id)) {
+      appDispatch(
+        createAction(ActionType.EDIT_CARD_LIST, [
+          ...cardList.filter((card: CardType) => card.id !== (event.target as Element).id),
+          [
             {
               id: uuidv4(),
               firstCardNumber: firstInputCardNumber,
@@ -74,8 +53,73 @@ function ConfirmButtonContainer({ id }: { id: any }) {
               type: cardType,
               alias: cardAlias,
             },
-          ]),
-        );
+          ],
+        ]),
+      );
+    } else {
+      appDispatch(
+        createAction(ActionType.ADD_CARD_LIST, [
+          {
+            id: uuidv4(),
+            firstCardNumber: firstInputCardNumber,
+            secondCardNumber: secondInputCardNumber,
+            thirdCardNumber: thirdInputCardNumber,
+            fourthCardNumber: fourthInputCardNumber,
+            ownerName: name,
+            month: expiredPeriodMonth,
+            year: expiredPeriodYear,
+            cvc: cvc,
+            firstPassword: firstPassword,
+            secondPassword: secondPassword,
+            type: cardType,
+            alias: cardAlias,
+          },
+        ]),
+      );
+    }
+
+    // cardList.find((card: CardType) => card.id !== (event.target as Element).id)
+    //   ? appDispatch(
+    //       createAction(ActionType.EDIT_CARD_LIST, [
+    //         ...cardList.filter((card: CardType) => card.id !== (event.target as Element).id),
+    //         [
+    //           {
+    //             id: uuidv4(),
+    //             firstCardNumber: firstInputCardNumber,
+    //             secondCardNumber: secondInputCardNumber,
+    //             thirdCardNumber: thirdInputCardNumber,
+    //             fourthCardNumber: fourthInputCardNumber,
+    //             ownerName: name,
+    //             month: expiredPeriodMonth,
+    //             year: expiredPeriodYear,
+    //             cvc: cvc,
+    //             firstPassword: firstPassword,
+    //             secondPassword: secondPassword,
+    //             type: cardType,
+    //             alias: cardAlias,
+    //           },
+    //         ],
+    //       ]),
+    //     )
+    //   : appDispatch(
+    //       createAction(ActionType.ADD_CARD_LIST, [
+    //         {
+    //           id: uuidv4(),
+    //           firstCardNumber: firstInputCardNumber,
+    //           secondCardNumber: secondInputCardNumber,
+    //           thirdCardNumber: thirdInputCardNumber,
+    //           fourthCardNumber: fourthInputCardNumber,
+    //           ownerName: name,
+    //           month: expiredPeriodMonth,
+    //           year: expiredPeriodYear,
+    //           cvc: cvc,
+    //           firstPassword: firstPassword,
+    //           secondPassword: secondPassword,
+    //           type: cardType,
+    //           alias: cardAlias,
+    //         },
+    //       ]),
+    //     );
 
     appDispatch(createAction(ActionType.FIRST_INPUT_CARD_NUMBER, ''));
     appDispatch(createAction(ActionType.SECOND_INPUT_CARD_NUMBER, ''));
