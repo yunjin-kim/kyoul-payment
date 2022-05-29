@@ -4,7 +4,7 @@ import { css } from '@emotion/react';
 
 import { useAppDispatch, useAppState, usePageDispatch } from '../../hooks';
 import { createAction } from '../../context/Provider';
-import { ActionType, PageActionType } from '../../types';
+import { ActionType, CardType, PageActionType } from '../../types';
 import { createPageAction } from '../../context/PageProvider';
 
 const DeleteButtonStyled = styled.button(
@@ -23,9 +23,9 @@ function DeleteButtonContainer({ id }: { id: string }) {
   const handleDeleteButtonClick = async (event: any) => {
     const cardId = event.target.id;
     if (window.confirm('등록된 카드를 삭제하시겠습니까?')) {
-      const setCardList = cardList.filter((card) => Number(card.id) !== Number(cardId));
+      const setCardList = cardList.filter((card: CardType) => Number(card.id) !== Number(cardId));
 
-      appDispatch(createAction(ActionType.DELETE_CARD, setCardList));
+      appDispatch(createAction(ActionType.EDIT_CARD_LIST, setCardList));
       pageDispatch(createPageAction(PageActionType.PAY_PAGE, true));
     }
   };

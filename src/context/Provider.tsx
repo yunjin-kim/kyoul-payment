@@ -17,7 +17,7 @@ export type State = {
   changeCardType: boolean;
   completeCard: boolean;
   cardAlias: string;
-  cardList: Array<CardType>;
+  cardList: any;
 };
 
 type Action = { type: ActionType; payload: any };
@@ -57,6 +57,7 @@ export function createAction(
 }
 
 function reducer(state: State, action: Action): any {
+  console.log('state', state, 'action', action);
   switch (action.type) {
     case ActionType.ID:
       return {
@@ -138,11 +139,11 @@ function reducer(state: State, action: Action): any {
         ...state,
         cardList: [...state.cardList, ...action.payload],
       };
-    case ActionType.DELETE_CARD:
+    case ActionType.EDIT_CARD_LIST:
       return {
         ...state,
         cardList: [...action.payload],
-      }
+      };
   }
 }
 

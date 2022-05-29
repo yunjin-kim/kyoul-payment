@@ -1,11 +1,11 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import styled from '@emotion/styled';
 
 import { createPageAction } from '../../context/PageProvider';
 
-import { usePageDispatch } from '../../hooks';
-import { PageActionType } from '../../types';
+import { useAppDispatch, usePageDispatch } from '../../hooks';
+import { ActionType, PageActionType } from '../../types';
+import { createAction } from '../../context/Provider';
 
 const SvgWrapper = styled.div(() => ({
   width: '30px',
@@ -13,10 +13,25 @@ const SvgWrapper = styled.div(() => ({
 }));
 
 function BackButtonContainer() {
-  const dispatch = usePageDispatch();
+  const appDispatch = useAppDispatch();
+  const pageDispatch = usePageDispatch();
 
   const handlePayPage = () => {
-    dispatch(createPageAction(PageActionType.PAY_PAGE, true));
+    appDispatch(createAction(ActionType.FIRST_INPUT_CARD_NUMBER, ''));
+    appDispatch(createAction(ActionType.SECOND_INPUT_CARD_NUMBER, ''));
+    appDispatch(createAction(ActionType.THIRD_INPUT_CARD_NUMBER, ''));
+    appDispatch(createAction(ActionType.FOURTH_INPUT_CARD_NUMBER, ''));
+    appDispatch(createAction(ActionType.INPUT_NAME, ''));
+    appDispatch(createAction(ActionType.INPUT_EXPIRED_PERIOD_MONTH, ''));
+    appDispatch(createAction(ActionType.INPUT_EXPIRED_PERIOD_YEAR, ''));
+    appDispatch(createAction(ActionType.INPUT_CVC, ''));
+    appDispatch(createAction(ActionType.FIRST_INPUT_PASSWORD, ''));
+    appDispatch(createAction(ActionType.SECOND_INPUT_PASSWORD, ''));
+    appDispatch(createAction(ActionType.COMPLETE_CARD, false));
+    appDispatch(createAction(ActionType.CARD_TYPE, ''));
+    appDispatch(createAction(ActionType.INPUT_CARD_ALIAS, ''));
+
+    pageDispatch(createPageAction(PageActionType.PAY_PAGE, true));
   };
 
   return (

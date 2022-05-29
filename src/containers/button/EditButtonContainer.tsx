@@ -5,7 +5,7 @@ import styled from '@emotion/styled';
 import { createAction } from '../../context/Provider';
 
 import { useAppDispatch, useAppState, usePageDispatch } from '../../hooks';
-import { ActionType, PageActionType } from '../../types';
+import { ActionType, CardType, PageActionType } from '../../types';
 import { createPageAction } from '../../context/PageProvider';
 
 const EditButtonStyled = styled.button(
@@ -25,7 +25,7 @@ function EditButtonContainer({ id }: { id: string }) {
     const cardId = event.target.id;
 
     appDispatch(createAction(ActionType.ID, event.target.id));
-    const editCard = cardList.find((card) => card.id === cardId);
+    const editCard = cardList.find((card: CardType) => card.id === cardId);
 
     if (!editCard) return alert('해당하는 카드는 존재하지 않습니다.');
 

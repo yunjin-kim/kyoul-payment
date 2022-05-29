@@ -15,12 +15,13 @@ type Props = {
   type: 'button' | 'submit' | 'reset' | undefined;
   onClick: (event: React.MouseEvent) => void;
   disabled?: boolean;
+  id: string;
   children: React.ReactNode;
 };
 
-function ConfirmButton({ type, onClick, disabled, children }: Props) {
+function ConfirmButton({ type, onClick, disabled, id,  children }: Props) {
   return (
-    <ConfirmButtonStyled type={type} onClick={onClick} {...(disabled ? { disabled: true } : '')}>
+    <ConfirmButtonStyled type={type} onClick={onClick} {...(disabled ? { disabled: true } : '') } id={id}>
       {children}
     </ConfirmButtonStyled>
   );

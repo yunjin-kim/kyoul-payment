@@ -16,7 +16,7 @@ export enum ActionType {
   COMPLETE_CARD = 'COMPLETE_CARD',
   INPUT_CARD_ALIAS = 'INPUT_CARD_ALIAS',
   ADD_CARD_LIST = 'ADD_CARD_LIST',
-  DELETE_CARD = 'DELETE_CARD',
+  EDIT_CARD_LIST = 'EDIT_CARD_LIST',
 }
 
 export type CardType = {

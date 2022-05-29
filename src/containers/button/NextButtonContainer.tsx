@@ -7,6 +7,7 @@ import { ActionType } from '../../types';
 
 function NextButtonContainer() {
   const {
+    id,
     firstInputCardNumber,
     secondInputCardNumber,
     thirdInputCardNumber,
@@ -43,7 +44,7 @@ function NextButtonContainer() {
   };
 
   return (
-    <ConfirmButton type="submit" onClick={handleSubmitCard} disabled={_disabled}>
+    <ConfirmButton type="submit" onClick={handleSubmitCard} disabled={_disabled} id={id}>
       다음
     </ConfirmButton>
   );

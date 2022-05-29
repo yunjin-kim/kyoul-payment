@@ -15,6 +15,7 @@ const Wrapper = styled.div(() => ({
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
+  cursor: 'pointer',
 }));
 
 const SvgWrapper = styled.div(() => ({
@@ -30,7 +31,6 @@ function AddCardButtonContainer() {
   };
 
   return (
-    // <Link to="/card/add">
     <Wrapper onClick={handleAddPage}>
       <SvgWrapper>
         <svg
@@ -49,7 +49,6 @@ function AddCardButtonContainer() {
         </svg>
       </SvgWrapper>
     </Wrapper>
-    // </Link>
   );
 }
 

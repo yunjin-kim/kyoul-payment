@@ -36,6 +36,7 @@ const CardCompleteTitle = styled.h1(() => ({
 
 function CardCompleteContainer() {
   const {
+    id,
     firstInputCardNumber,
     secondInputCardNumber,
     thirdInputCardNumber,
@@ -74,7 +75,7 @@ function CardCompleteContainer() {
         width='208px'
         height='45px'
       />
-      <ConfirmButtonContainer />
+      <ConfirmButtonContainer id={id} />
     </Wrapper>
   );
 }
