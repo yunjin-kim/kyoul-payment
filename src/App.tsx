@@ -14,10 +14,11 @@ import PaymentPage from './lib/KyoulPayPage';
 
 import { initial } from './styles/global';
 
-function App() {
+function App({ children }: { children: React.ReactNode }) {
   return (
     <AppProvider>
       <PageProvider>
+        {children}
         {/* <Global styles={initial} /> */}
         {/* <Routes>
           <Route path='/' element={<PaymentPage totalAccount={1000} />} />
