@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from '@emotion/styled';
 
-import { useAppState } from 'hooks';
+import { useAppState } from '../../hooks';
 
 type SliderType = 'left' | 'right';
 
