@@ -10,12 +10,13 @@ import { useAppDispatch, useAppState, usePageDispatch } from '../../hooks';
 
 import { ActionType, CardType, PageActionType } from '../../types';
 
-function ConfirmButtonContainer({ id }: { id: any }) {
+function ConfirmButtonContainer() {
   const { cardList } = useAppState();
   const pageDispatch = usePageDispatch();
   const appDispatch = useAppDispatch();
 
   const {
+    id,
     firstInputCardNumber,
     secondInputCardNumber,
     thirdInputCardNumber,
@@ -31,27 +32,25 @@ function ConfirmButtonContainer({ id }: { id: any }) {
   } = useAppState();
 
   const handleConfirmCard = (event: { target: any }) => {
-    cardList.find((card: CardType) => card.id !== (event.target as Element).id)
+    cardList.find((card: CardType) => card.id === (event.target as Element).id)
       ? appDispatch(
           createAction(ActionType.EDIT_CARD_LIST, [
             ...cardList.filter((card: CardType) => card.id !== (event.target as Element).id),
-            [
-              {
-                id: uuidv4(),
-                firstCardNumber: firstInputCardNumber,
-                secondCardNumber: secondInputCardNumber,
-                thirdCardNumber: thirdInputCardNumber,
-                fourthCardNumber: fourthInputCardNumber,
-                ownerName: name,
-                month: expiredPeriodMonth,
-                year: expiredPeriodYear,
-                cvc: cvc,
-                firstPassword: firstPassword,
-                secondPassword: secondPassword,
-                type: cardType,
-                alias: cardAlias,
-              },
-            ],
+            {
+              id: uuidv4(),
+              firstCardNumber: firstInputCardNumber,
+              secondCardNumber: secondInputCardNumber,
+              thirdCardNumber: thirdInputCardNumber,
+              fourthCardNumber: fourthInputCardNumber,
+              ownerName: name,
+              month: expiredPeriodMonth,
+              year: expiredPeriodYear,
+              cvc: cvc,
+              firstPassword: firstPassword,
+              secondPassword: secondPassword,
+              type: cardType,
+              alias: cardAlias,
+            },
           ]),
         )
       : appDispatch(

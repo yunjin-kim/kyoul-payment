@@ -29,7 +29,6 @@ export function createPageAction(type: PageActionType, payload: boolean): PageAc
 }
 
 function reducer(state: PageState, action: PageAction): any {
-  console.log(state, action);
   switch (action.type) {
     case PageActionType.PAY_PAGE:
       return {

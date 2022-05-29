@@ -7,7 +7,7 @@ import DeleteButtonContainer from '../button/DeleteButtonContainer';
 import EditButtonContainer from '../../containers/button/EditButtonContainer';
 import AddCardButtonContainer from '../../containers/button/AddCardButtonContainer'; 
 
-import { useCard } from '../../hooks';
+import { useAppState, useCard } from '../../hooks';
 import { CardType } from '../../types';
 import { CardWrapper } from './style';
 import { css } from '@emotion/react';
@@ -47,11 +47,7 @@ const AddCardTextWrapper = styled.p(() => ({
 
 const CardListContainer = forwardRef<HTMLDivElement, Props>(
   ({ flexDirection, marginRight, marginBottom }, ref) => {
-    const { cardList, getCards } = useCard();
-
-    useEffect(() => {
-      // getCards();
-    }, []);
+    const { cardList } = useAppState();
 
     return (
       <Wrapper flexDirection={flexDirection} ref={ref}>

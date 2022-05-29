@@ -92,8 +92,8 @@ function Card({
       <div className="number">
         <div className="number-child">{firstInputCardNumber}</div>
         <div className="number-child">{secondInputCardNumber}</div>
-        <div className="number-child">{transformNumToBullet(thirdInputCardNumber)}</div>
-        <div className="number-child">{transformNumToBullet(fourthInputCardNumber)}</div>
+        <div className="number-child">{thirdInputCardNumber && transformNumToBullet(thirdInputCardNumber)}</div>
+        <div className="number-child">{fourthInputCardNumber && transformNumToBullet(fourthInputCardNumber)}</div>
       </div>
       <div className="info">
         <OwnerNameSpan name={name}>{name}</OwnerNameSpan>

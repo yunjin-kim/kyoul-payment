@@ -1,9 +1,10 @@
 import React from 'react';
 
+import AddCardPage from '../../pages/AddCardPage';
+import PayPage from '../../pages/PayPage';
+import CardEditPage from '../../pages/CardEditPage';
+
 import { usePageState } from '../../hooks';
-import AddCardPage from '../AddCardPage';
-import PayPage from '../PayPage';
-import CardEditPage from '../CardEditPage';
 
 type TotalAccountType = { totalAccount: number };
 

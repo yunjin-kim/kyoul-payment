@@ -57,7 +57,6 @@ export function createAction(
 }
 
 function reducer(state: State, action: Action): any {
-  console.log('state', state, 'action', action);
   switch (action.type) {
     case ActionType.ID:
       return {
