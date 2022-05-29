@@ -23,7 +23,8 @@ function DeleteButtonContainer({ id }: { id: string }) {
   const handleDeleteButtonClick = async (event: any) => {
     const cardId = event.target.id;
     if (window.confirm('등록된 카드를 삭제하시겠습니까?')) {
-      const setCardList = cardList.filter((card: CardType) => Number(card.id) !== Number(cardId));
+      const setCardList = cardList.filter((card: CardType) => card.id !== cardId);
+      console.log('카드삭제한다.', setCardList)
 
       appDispatch(createAction(ActionType.EDIT_CARD_LIST, setCardList));
       pageDispatch(createPageAction(PageActionType.PAY_PAGE, true));
