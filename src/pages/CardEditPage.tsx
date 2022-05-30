@@ -28,6 +28,7 @@ function CardEditPage() {
             <PageTitle>카드수정</PageTitle>
           </TitleWrapper>
           <CardContainer />
+          <MarginWrapper marginBottom='40px' />
           <CardFormContainer />
         </>
       )}
