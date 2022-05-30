@@ -34,6 +34,7 @@
     "eslint-plugin-react": "^7.29.4",
     "eslint-plugin-react-hooks": "^4.4.0",
     "eslint-plugin-simple-import-sort": "^7.0.0",
+    "gh-pages": "^4.0.0",
     "husky": "^7.0.0",
     "json-server": "^0.17.0",
     "kyoul-pay": "^0.0.1",
@@ -51,7 +52,8 @@
     "build": "react-scripts build",
     "server": "json-server data.json --watch --port 4004",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "prepare": "rm -rf dist && mkdir dist && tsc"
+    "prepare": "rm -rf dist && mkdir dist && tsc",
+    "deploy": "gh-pages -d build"
   },
   "repository": {
     "type": "git",
