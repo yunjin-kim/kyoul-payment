@@ -19,7 +19,8 @@ function App() {
     <AppProvider>
       <PageProvider>
         <Global styles={initial} />
-        <Routes>
+          <PaymentPage totalAccount={1000} paySuccessUrl="/" payCancelUrl="/"/>
+        {/* <Routes>
           <Route
             path="/"
             element={<PaymentPage totalAccount={1000} paySuccessUrl="/" payCancelUrl="/" />}
@@ -27,9 +28,9 @@ function App() {
           <Route path="/card" element={<CardListPage />} />
           <Route path="/card/add" element={<AddCardPage />} />
           <Route path="/card/edit/*" element={<CardEditPage />} />
-          {/* <Route path="/card/pay/*" element={<CardPayPage />} /> */}
+          <Route path="/card/pay/*" element={<CardPayPage />} />
           <Route path="*" element={<WrongPathPage />} />
-        </Routes>
+        </Routes> */}
       </PageProvider>
     </AppProvider>
   );
